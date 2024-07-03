@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!",
-        testAlign=TextAlign.Center,
+        textAlign=TextAlign.Center,
         modifier = modifier
     )
 }
