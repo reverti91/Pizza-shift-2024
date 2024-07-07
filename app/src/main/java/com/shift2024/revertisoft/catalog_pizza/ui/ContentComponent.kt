@@ -2,7 +2,6 @@ package com.shift2024.revertisoft.catalog_pizza.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -20,32 +19,29 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.shift2024.revertisoft.R
 import com.shift2024.revertisoft.catalog_pizza.domain.entity.CatalogItem
 import com.shift2024.revertisoft.formatAmountText
-import com.shift2024.revertisoft.formatBorrowerName
+
 
 @Composable
 fun ContentComponent(
-	catalogs: List<CatalogItem>,
-	onItemClicked: (catalogId: String) -> Unit,
+	catalogs: List<CatalogItem>
 ) {
 	LazyColumn(modifier = Modifier.fillMaxHeight()) {
 		items(catalogs) { catalog ->
 			CatalogItem(
-				catalog,
-				onItemClicked = { onItemClicked(catalog.id) }
-			)
+				catalog)
+
 		}
 	}
 }
 
 @Composable
 private fun CatalogItem(
-	item: CatalogItem,
-	onItemClicked: () -> Unit,
+	item: CatalogItem
+
 ) {
 	Row(modifier = Modifier.padding(all = 8.dp)) {
 		Image(
@@ -65,7 +61,6 @@ private fun CatalogItem(
 		Column(
 			Modifier
 				.fillMaxWidth()
-				.clickable(onClick = onItemClicked)
 				.padding(vertical = 8.dp, horizontal = 16.dp)
 		) {
 

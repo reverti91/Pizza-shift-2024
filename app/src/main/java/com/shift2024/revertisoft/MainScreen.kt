@@ -8,12 +8,6 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 
-import com.shift2024.revertisoft.details.DetailsRoute
-import com.shift2024.revertisoft.details.domain.usecase.GetLoanUseCase
-import com.shift2024.revertisoft.details.presentation.DetailsViewModel
-import com.shift2024.revertisoft.details.presentation.DetailsViewModelFactory
-import com.shift2024.revertisoft.details.ui.DetailsScreen
-
 import com.shift2024.revertisoft.catalog_pizza.CatalogRoute
 import com.shift2024.revertisoft.catalog_pizza.domain.usecase.CatalogItemsUseCase
 import com.shift2024.revertisoft.catalog_pizza.presentation.CatalogViewModel
@@ -22,8 +16,7 @@ import com.shift2024.revertisoft.catalog_pizza.ui.CatalogScreen
 
 @Composable
 fun MainScreen(
-    catalogItemsUseCase: CatalogItemsUseCase,
-    getLoanUseCase: GetLoanUseCase,
+    catalogItemsUseCase: CatalogItemsUseCase
 ) {
 	val navController = rememberNavController()
 
@@ -32,17 +25,18 @@ fun MainScreen(
 			composable<CatalogRoute> {
 				val viewModel: CatalogViewModel = viewModel(factory = CatalogViewModelFactory(catalogItemsUseCase))
 				CatalogScreen(
-					viewModel,
-					onItemSelected = { navController.navigate(DetailsRoute(loanId = it)) },
+					viewModel
 				)
 			}
-			composable<DetailsRoute> {
+			/*composable<DetailsRoute> { DetailsRoute(/*...*/) }*/
+
+			/*composable<DetailsRoute> {
 				val destination = it.toRoute<DetailsRoute>()
 				val viewModel = viewModel(DetailsViewModel::class.java, factory = DetailsViewModelFactory(destination.loanId, getLoanUseCase))
 				DetailsScreen(
 					viewModel
 				)
-			}
+			}*/
 		}
 	}
 }

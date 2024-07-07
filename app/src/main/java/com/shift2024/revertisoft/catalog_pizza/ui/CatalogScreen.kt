@@ -12,6 +12,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.shift2024.revertisoft.R
 import com.shift2024.revertisoft.catalog_pizza.presentation.CatalogState
@@ -19,7 +20,7 @@ import com.shift2024.revertisoft.catalog_pizza.presentation.CatalogViewModel
 
 
 @Composable
-fun CatalogScreen(catalogViewModel: CatalogViewModel, onItemSelected: (catalogId: Long) -> Unit, ) {
+fun CatalogScreen(catalogViewModel: CatalogViewModel) {
 	val catalogState by catalogViewModel.state.collectAsState()
 
 	LaunchedEffect(Unit) {
@@ -40,13 +41,10 @@ fun CatalogScreen(catalogViewModel: CatalogViewModel, onItemSelected: (catalogId
 			is CatalogState.Loading -> LoadingComponent()
 			is CatalogState.Failure -> ErrorComponent(
 				message = state.message ?: stringResource(id = R.string.error_unknown_error),
-				onRetry = { catalogViewModel.loadCatalog() },
-			)
+				onRetry = { catalogViewModel.loadCatalog() },)
 
-			is CatalogState.Content -> ContentComponent(
-				catalogs = state.catalogs,
-				onItemClicked = onItemSelected,
-			)
+			is CatalogState.Content -> ContentComponent(catalogs = state.catalogs)
 		}
 	}
 }
+
