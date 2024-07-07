@@ -1,0 +1,20 @@
+<resources>
+	<string name="app_name">PizzaShiftApp</string>
+
+	<string name="ruble">₽</string>
+	<string name="at">от</string>
+
+
+	<string name="error_title">Произошла ошибка</string>
+	<string name="error_try_again">Повторить</string>
+	<string name="error_unknown_error">Неизвестная ошибка</string>
+
+	<!--	Catalog Screen -->
+	<string name="Catalog_title">Пицца</string>
+
+	<string name="name_pattern">%s %s.</string>
+	<string name="amount_with_percent_pattern">%s под %.2f%%</string>
+
+	<!--	Details Screen -->
+
+</resources>
