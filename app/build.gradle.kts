@@ -62,7 +62,7 @@ dependencies {
 
 	implementation(libs.androidx.core.ktx)
 	implementation(libs.androidx.lifecycle.runtime.ktx)
-	implementation(libs.androidx.coil.kt)
+	//implementation(libs.androidx.coil.kt)
 
 	// Compose
 	implementation(libs.androidx.activity.compose)
