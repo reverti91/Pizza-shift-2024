@@ -13,11 +13,8 @@ kotlinxSerialization = "1.6.3"
 retrofit = "2.11.0"
 okhttp = "4.12.0"
 coroutines = "1.8.1"
-coil-compose="2.6.0"
 
 [libraries]
-
-androidx-coil-kt={group="androidx.compose.ui",name="coil",version.ref="coil-compose"}
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

@@ -1,13 +1,27 @@
 package com.shift2024.revertisoft.catalog_pizza.data.model
 
+import com.shift2024.revertisoft.catalog_pizza.domain.entity.CatalogItem
 import com.shift2024.revertisoft.common.domain.PizzaDough
 import com.shift2024.revertisoft.common.domain.PizzaIngredient
 import com.shift2024.revertisoft.common.domain.PizzaSize
+import kotlinx.serialization.Contextual
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class CatalogItemModel(
+
+	val success:Boolean,
+	@SerialName("reason")
+	val reason:String,
+
+	@SerialName("catalog")
+	val catalog:List<CatalogListModel>,
+
+)
+@Serializable
+data class CatalogListModel(
+
 	val id: String,
 	@SerialName("name")
 	val name: String,
@@ -42,4 +56,4 @@ data class CatalogItemModel(
 	val isHit:Boolean,
 	val img:String,
 
-)
+	)

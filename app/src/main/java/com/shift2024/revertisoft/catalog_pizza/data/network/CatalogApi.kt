@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface CatalogApi {
 
-	@GET("loans")
-	suspend fun getAll(): List<CatalogItemModel>
+	@GET("catalog")
+	suspend fun getAll(): CatalogItemModel
 }

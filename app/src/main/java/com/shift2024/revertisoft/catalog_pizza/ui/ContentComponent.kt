@@ -31,18 +31,14 @@ fun ContentComponent(
 ) {
 	LazyColumn(modifier = Modifier.fillMaxHeight()) {
 		items(catalogs) { catalog ->
-			CatalogItem(
-				catalog)
+			CatalogItem(catalog)
 
 		}
 	}
 }
 
 @Composable
-private fun CatalogItem(
-	item: CatalogItem
-
-) {
+private fun CatalogItem(item: CatalogItem) {
 	Row(modifier = Modifier.padding(all = 8.dp)) {
 		Image(
 			painter = painterResource(R.drawable.ic_launcher_background),

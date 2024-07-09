@@ -12,6 +12,7 @@ class CatalogRepositoryImpl(
 
 	override suspend fun getAll(): List<CatalogItem> {
 		val models = catalogApi.getAll()
-		return models.map { catalogItemConverter.convert(it) }
-	}
+		return catalogItemConverter.convertAll(models) }
+
+
 }

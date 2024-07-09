@@ -23,9 +23,7 @@ import com.shift2024.revertisoft.catalog_pizza.presentation.CatalogViewModel
 fun CatalogScreen(catalogViewModel: CatalogViewModel) {
 	val catalogState by catalogViewModel.state.collectAsState()
 
-	LaunchedEffect(Unit) {
-		catalogViewModel.loadCatalog()
-	}
+	LaunchedEffect(Unit) { catalogViewModel.loadCatalog() }
 
 	Column(modifier = Modifier.fillMaxSize()) {
 		Text(
