@@ -1,6 +1,6 @@
 package com.shift2024.revertisoft.common.domain
 
-enum class PizzaDough {
+enum class PizzaDoughEnum {
     THIN,
     THICK;
 }

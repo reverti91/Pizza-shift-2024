@@ -1,6 +1,6 @@
 package com.shift2024.revertisoft.common.domain
 
-enum class PizzaIngredient {
+enum class PizzaIngredientEnum {
     PINEAPPLE,
     MOZZARELLA,
     PEPERONI,

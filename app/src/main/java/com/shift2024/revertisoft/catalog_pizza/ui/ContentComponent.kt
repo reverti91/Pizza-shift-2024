@@ -1,7 +1,6 @@
 package com.shift2024.revertisoft.catalog_pizza.ui
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -21,24 +20,22 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.shift2024.revertisoft.R
-import com.shift2024.revertisoft.catalog_pizza.domain.entity.CatalogItem
+import com.shift2024.revertisoft.catalog_pizza.domain.entity.Pizza
 import com.shift2024.revertisoft.formatAmountText
 
 
 @Composable
-fun ContentComponent(
-	catalogs: List<CatalogItem>
-) {
+fun ContentComponent(catalogs: List<Pizza>) {
 	LazyColumn(modifier = Modifier.fillMaxHeight()) {
 		items(catalogs) { catalog ->
-			CatalogItem(catalog)
+			PizzaItem(catalog)
 
 		}
 	}
 }
 
 @Composable
-private fun CatalogItem(item: CatalogItem) {
+private fun PizzaItem(item: Pizza) {
 	Row(modifier = Modifier.padding(all = 8.dp)) {
 		Image(
 			painter = painterResource(R.drawable.ic_launcher_background),
@@ -70,7 +67,7 @@ private fun CatalogItem(item: CatalogItem) {
 				)
 
 				Text(
-					text = formatAmountText(amount = item.sizePrice),
+					text = formatAmountText(amount = item.size.size.toLong()),
 					style = MaterialTheme.typography.bodyMedium,
 				)
 		}

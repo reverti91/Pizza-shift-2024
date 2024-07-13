@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit
 
 class NetworkModule {
 
-	private companion object {
+	 companion object {
 
 		const val BASE_URL = "https://shift-backend.onrender.com/pizza/"
 		const val CONNECT_TIMEOUT = 10L

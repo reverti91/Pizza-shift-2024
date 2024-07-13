@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface CatalogApi {
 
-	@GET("catalog")
+	@GET("/pizza/catalog")
 	suspend fun getAll(): CatalogItemModel
 }
